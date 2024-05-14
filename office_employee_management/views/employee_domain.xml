@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--form view-->
+         <record id="view_office_domain_form" model="ir.ui.view">
+            <field name="name">domain.info</field>
+            <field name="model">domain.info</field>
+            <field name="arch" type="xml">
+                <form>
+                    <!--defining smart button start here-->
+                    <header>
+                     <div name="button_box" position="inside">
+                            <button class="oe_stat_button" type="object" name="action_order_list">
+                                <field string="domain" name="listed_property_count" widget="statinfo"/>
+                            </button>
+                        </div>
+                    </header>
+                    <!--defining smart button end here-->
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="employee_size" />
+                                <field name="allocated_floor"/>
+                                <field name = "tl_name"/>
+                                <field name = "domain_selection"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+        <!--tree view-->
+         <record id="view_office_domain_tree" model="ir.ui.view">
+            <field name="name">domain.info.tree</field>
+            <field name="model">domain.info</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_size" />
+                    <field name="allocated_floor"/>
+                    <field name = "domain_selection"/>
+                     <field name = "tl_name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--search view-->
+        <record id="view_office_domain_search" model="ir.ui.view">
+            <field name="name">domain.info.search</field>
+            <field name="model">domain.info</field>
+            <field name="arch" type="xml">
+                <search string="employee_search">
+                    <field name="employee_size" />
+                    <field name="allocated_floor"/>
+                    <field name = "domain_selection"/>
+                    <field name = "tl_name"/>
+
+                    <separator/>
+                    <filter name="odoo" string="Odoo" domain="[('domain_selection','=','odoo')]"/>
+                    <filter name="shopify" string="Shopify" domain="[('domain_selection','=','shopify')]"/>
+                    <filter name="magento" string="Magento" domain="[('domain_selection','=','magento')]"/>
+                    <filter name="php" string="Php" domain="[('domain_selection','=','php')]"/>
+
+                    <group string="Group By" expand="0">
+                        <filter name="domain" string="Domain" context="{'group_by':'domain_selection'}"/>
+                    </group>
+
+                    <searchpanel>
+                        <field name="domain_selection" string="domain_selection" enable_counters="1"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+        <!-- ir sequence for employee_domain -->
+<!--        <record id="ir_sequence_crm_iap_mine" model="ir.sequence">-->
+<!--            <field name="name">Lead Mining Request</field>-->
+<!--            <field name="code">crm.iap.lead.mining.request</field>-->
+<!--            <field name="prefix">LMR</field>-->
+<!--            <field name="padding">3</field>-->
+<!--            <field name="company_id" eval="False"/>-->
+<!--        </record>-->
+
+        <!--Action Window-->
+         <record id="action_office_domain" model="ir.actions.act_window">
+            <field name="name">domain.info</field>
+            <field name="res_model">domain.info</field>
+             <field name="view_mode">tree,form,search</field>
+            <field name="help" type="html">
+                <p class="0_view_nocontent_smiling_face">
+                    Create your domain !
+                </p>
+            </field>
+        </record>
+
+         <menuitem id="menu_office_salary"
+                   name="Domain"
+                   parent="menu_office_master"
+                   action="action_office_domain"
+                   sequence="1"/>
+
+    </data>
+</odoo>

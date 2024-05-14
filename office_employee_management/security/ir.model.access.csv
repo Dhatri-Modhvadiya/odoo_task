@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access.office_employee_management.employee_info,access_office_employee_management_employee_info,model_employee_info,base.group_user,1,1,1,1
+access.office_employee_management.salary_info,access_office_employee_management_salary_info,model_salary_info,base.group_user,1,1,1,1
+access.office_employee_management.domain_info,access_office_employee_management_domain_info,model_domain_info,base.group_user,1,1,1,1
+access.office_employee_management.leave.info,access_office_employee_management_leave_info,model_leave_info,base.group_user,1,1,1,1
+
+access.office_employee_management.demo.demo,access_office_employee_management_demo_demo,model_demo_demo,base.group_user,1,1,1,1
+
+
+access.office_employee_management.department.info,access_office_employee_management_department_info,model_department_info,base.group_user,1,1,1,1
+

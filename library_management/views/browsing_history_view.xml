@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+         <!--form view-->
+         <record id="view_library_history_form" model="ir.ui.view">
+            <field name="name">history.info.form</field>
+            <field name="model">history.info</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="book_borrowed"/>
+                                <field name="reserved_by"/>
+                            </group>
+                            <group>
+                                <field name="borrowed_date"/>
+                                <field name="due_date"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--tree view-->
+         <record id="view_library_history_tree" model="ir.ui.view">
+            <field name="name">history.info.tree</field>
+            <field name="model">history.info</field>
+            <field name="arch" type="xml">
+                <tree>
+                        <field name="book_borrowed"/>
+                        <field name="reserved_by"/>
+                        <field name="borrowed_date"/>
+                        <field name="due_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--graph view-->
+         <record id="view_library_history_graph" model="ir.ui.view">
+            <field name="name">history.info.graph</field>
+            <field name="model">history.info</field>
+            <field name="arch" type="xml">
+                <graph>
+                        <field name="book_borrowed"/>
+                        <field name="reserved_by"/>
+                        <field name="borrowed_date"/>
+                        <field name="due_date"/>
+                </graph>
+            </field>
+        </record>
+
+
+        <!--pivot view-->
+        <record id="view_library_history_pivot" model="ir.ui.view">
+            <field name="name">history.info.pivot</field>
+            <field name="model">history.info</field>
+            <field name="arch" type="xml">
+                <pivot>
+                        <field name="book_borrowed"/>
+                        <field name="reserved_by"/>
+                        <field name="borrowed_date"/>
+                        <field name="due_date"/>
+                </pivot>
+            </field>
+        </record>
+
+        <!--Action Window-->
+         <record id="action_library_history" model="ir.actions.act_window">
+            <field name="name">History</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">history.info</field>
+              <field name="view_mode">form,tree,graph,pivot</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="0_view_nocontent_smiling_face">
+                    Create your first history detail!
+                </p>
+            </field>
+        </record>
+
+         <menuitem id="menu_library_history"
+                   name="History"
+                   parent="menu_author_name_master"
+                   action="action_library_history"
+                   sequence="2"/>
+
+
+    </data>
+</odoo>

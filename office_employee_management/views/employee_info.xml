@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--form view-->
+        <record id="view_office_employee_form" model="ir.ui.view">
+            <field name="name">employee.info.form</field>
+            <field name="model">employee.info</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <!--defining statusbar start here-->
+                        <field name = "status" widget = "statusbar"/>
+                        <button name = "resignation" string = "Resigned" type = "object" class ="oe_highlighht"/>
+                        <button name="revert_to_active" string="Revert to Active" type="object" class="oe_highlight"/>
+                        <!--defining statusbar end here-->
+                    </header>
+                    <sheet>
+                        <field name="image" widget="image" class="oe_avatar"/>
+                        <group>
+                            <group>
+                                <field name="employee_name" help="employee name "/>
+                                <field name="emp_position"/>
+                                <field name="employee_id"/>
+                                <field name="employee_dob"/>
+                                <field name="employee_salary"/>
+                                <field name="fresher"/>
+                            </group>
+                        </group>
+
+
+                         <div style = "float:right;padding-right:30px;">
+                                    <div style ="float:left;">
+                                        <h6 style = "margin-bottom:-5px,margin-top:5px;">In Hand Salary</h6><br/>
+                                        <h6 style = "margin-bottom:-5px;">EPF+ESI</h6><br/>
+                                        <h6 style = "margin-bottom:-5px;">CTC Salary</h6><br/>
+                                    </div>
+                                    <div style = "float:right;">
+                                        <field name = "hand_salary"/><br/>
+                                        <field name = "epf_esi"/><br/>
+                                        <field name = "ctc_salary"/><br/>
+                                    </div>
+                            </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+               <!--kanban view-->
+        <record id="view_office_employee_kanban" model="ir.ui.view">
+            <field name="name">employee.info.form</field>
+            <field name="model">employee.info</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="id">id</field>
+                    <field name="employee_name" help="employee name "/>
+                    <field name="emp_position"/>
+                    <field name="employee_id"/>
+                    <field name="employee_dob"/>
+                    <field name="employee_salary"/>
+                    <field name="fresher"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                 <div class="o_kanban_image">
+                                      <field name="image" widget="image" class="oe_avatar"/>
+                                  </div>
+                                  <div class="oe_kanban_details">
+                                       <ul>
+                                           <li>
+                                                Name: <field name="employee_name"/>
+                                           </li>
+                                           <li>
+                                                Emp_position: <field name="emp_position"/>
+                                           </li>
+                                           <li>
+                                                  Employee_id: <field name="employee_id"/>
+                                           </li>
+                                           <li>
+                                                  Employee_dob: <field name="employee_dob"/>
+                                           </li>
+                                           <li>
+                                                  Employee_salary: <field name="employee_salary"/>
+                                           </li>
+                                           <li>
+                                                  Fresher: <field name="fresher"/>
+                                           </li>
+                                       </ul>
+                                  </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!--tree view-->
+        <record id="view_office_employee_tree" model="ir.ui.view">
+            <field name="name">employee.info.tree</field>
+            <field name="model">employee.info</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_name"/>
+                    <field name="emp_position"/>
+                    <field name="employee_id"/>
+                    <field name="employee_dob"/>
+                    <field name="employee_salary"/>
+                    <field name="fresher"/>
+                     <field name = "status"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--Action Window-->
+        <record id="action_office_employee" model="ir.actions.act_window">
+            <field name="name">Employee</field>
+            <field name="res_model">employee.info</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+                <p class="0_view_nocontent_smiling_face">
+                    Create your first employee detail!
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_office_employee"
+                  name="Employee"
+                  parent="menu_office_master"
+                  action="action_office_employee"
+                  sequence="1"/>
+
+    </data>
+</odoo>

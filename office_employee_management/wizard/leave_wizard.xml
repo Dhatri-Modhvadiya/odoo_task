@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--form view-->
+        <record id="view_wizard_form" model="ir.ui.view">
+            <field name="name">leave_wizard.form</field>
+            <field name="model">leave_wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="employee_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="demo_demo_action_id" model="ir.actions.act_window">
+            <field name="name">leave_wizard</field>
+            <field name="res_model">leave_wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="reason" type="html">
+                <p class="0_view_nocontent_smiling_face">
+                    Create your leave !
+                </p>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

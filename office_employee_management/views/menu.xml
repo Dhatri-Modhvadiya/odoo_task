@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!--main menu start here-->
+    <menuitem id="menu_office_root"
+              name="Office_Employee"
+              sequence="0"/>
+          <!--main menu end here-->
+
+    <menuitem id="menu_office_master"
+              name="Data"
+              parent="menu_office_root"
+              sequence="1"/>
+
+    <menuitem id="menu_office1_master"
+              name="Data1"
+              parent="menu_office_root"
+              sequence="2"/>
+
+    <menuitem id = "menu_leave_master"
+              name = "Leave"
+              parent="menu_office_root"
+              sequence="3"/>
+
+    <menuitem id = "menu_salary_master"
+              name = "Salary"
+              parent="menu_office_root"
+              sequence="4"/>
+
+<!--     <menuitem id = "menu_department_master"-->
+<!--              name = "Leave"-->
+<!--              parent="menu_office_root"-->
+<!--              sequence="6"/>-->
+
+</odoo>

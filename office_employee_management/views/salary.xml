@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+<!--form view-->
+         <record id="view_office_salary_form" model="ir.ui.view">
+            <field name="name">salary.info.form</field>
+            <field name="model">salary.info</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="salary_amount" />
+                                <group>
+                                      <field name="employee_id"/>
+                                </group>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+        <!--tree view-->
+         <record id="view_office_salary_tree" model="ir.ui.view">
+            <field name="name">salary.info.tree</field>
+            <field name="model">salary.info</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="salary_amount" />
+                    <field name="employee_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--Action Window-->
+         <record id="action_office_salary" model="ir.actions.act_window">
+            <field name="name">Salary</field>
+            <field name="res_model">salary.info</field>
+             <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="0_view_nocontent_smiling_face">
+                    Create your first salary detail!
+                </p>
+            </field>
+        </record>
+
+         <menuitem id="menu_office_salary"
+                   name="Salary"
+                   parent="menu_salary_master"
+                   action="action_office_salary"
+                   sequence="4"/>
+
+    </data>
+</odoo>

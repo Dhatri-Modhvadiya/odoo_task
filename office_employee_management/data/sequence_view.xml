@@ -1,0 +1,9 @@
+<!--define ir sequence in leave management model-->
+<odoo>
+    <record model="ir.sequence" id="sequence_number_id">
+        <field name="name">Employee Sequence Number</field>
+        <field name="code">customer.sequence</field>
+        <field name="padding">4</field>
+        <field name="prefix">EMP</field>
+    </record>
+</odoo>

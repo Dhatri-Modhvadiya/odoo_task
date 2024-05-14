@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="department_info">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <h1>Employee Department</h1>
+                        <h2>Emp ID:
+                            <t t-esc="o.employee_ids"/>
+                        </h2>
+                        <h3>Name:
+                            <t style="text-transform: uppercase;" t-esc="o.name"/>
+                        </h3>
+<!--                        <table class="table table-sm o_main_table table-borderless mt-4" style="text-align: center;">-->
+<!--                            <thead>-->
+<!--                                <tr>-->
+<!--                                    <th>name</th>-->
+<!--                                    <th>description</th>-->
+<!--                                    <th>manager</th>-->
+<!--                                    <th>employee_ids</th>-->
+<!--                                </tr>-->
+<!--                            </thead>-->
+<!--                            <tbody>-->
+<!--                                <t t-foreach="o.marks_ids" t-as="marks">-->
+<!--                                    <tr>-->
+<!--                                        <td>-->
+<!--                                            <t t-esc="marks.subject_id.code"/>-->
+<!--                                        </td>-->
+<!--                                        <td>-->
+<!--                                            <t t-esc="marks.subject_id.name"/>-->
+<!--                                        </td>-->
+<!--                                        <td>-->
+<!--                                            <t t-esc="marks.marks_obtained"/>-->
+<!--                                        </td>-->
+<!--                                    </tr>-->
+<!--                                </t>-->
+<!--                            </tbody>-->
+<!--                        </table>-->
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_department_info" model="ir.actions.report">
+        <field name="name">Print Department Data</field>
+        <field name="model">department.info</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">office_employee_management.department_info</field>
+        <field name="report_file">office_employee_management.department_info</field>
+        <field name="binding_model_id" ref="model_department_info"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

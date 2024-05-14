@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+         <!--form view-->
+         <record id="view_library_member_form" model="ir.ui.view">
+            <field name="name">member.info.form</field>
+            <field name="model">member.info</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="email"/>
+                            </group>
+                            <group>
+                                <field name="phone"/>
+                                <field name="address"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--tree view-->
+         <record id="view_library_member_tree" model="ir.ui.view">
+            <field name="name">member.info.tree</field>
+            <field name="model">member.info</field>
+            <field name="arch" type="xml">
+                <tree>
+                        <field name="name"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                        <field name="address"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--graph view-->
+         <record id="view_library_member_graph" model="ir.ui.view">
+            <field name="name">member.info.graph</field>
+            <field name="model">member.info</field>
+            <field name="arch" type="xml">
+                <graph>
+                        <field name="name"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                        <field name="address"/>
+                </graph>
+            </field>
+        </record>
+
+
+        <!--pivot view-->
+        <record id="view_library_member_pivot" model="ir.ui.view">
+            <field name="name">member.info.pivot</field>
+            <field name="model">member.info</field>
+            <field name="arch" type="xml">
+                <pivot>
+                        <field name="name"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                        <field name="address"/>
+                </pivot>
+            </field>
+        </record>
+
+        <!--Action Window-->
+         <record id="action_library_member" model="ir.actions.act_window">
+            <field name="name">Member</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">member.info</field>
+              <field name="view_mode">form,tree,graph,pivot</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="0_view_nocontent_smiling_face">
+                    Create your first member detail!
+                </p>
+            </field>
+        </record>
+
+         <menuitem id="menu_library_member"
+                   name="Member's"
+                   parent="menu_member_master"
+                   action="action_library_member"
+                   sequence="4"/>
+
+
+    </data>
+</odoo>
