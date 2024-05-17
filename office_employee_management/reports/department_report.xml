@@ -53,4 +53,5 @@
         <field name="binding_model_id" ref="model_department_info"/>
         <field name="binding_type">report</field>
     </record>
+
 </odoo>

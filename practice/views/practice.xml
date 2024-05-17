@@ -2,66 +2,58 @@
 <odoo>
     <data>
 
-<!--form view-->
-         <record id="view_odoo_practice_form" model="ir.ui.view">
+        <!--form view-->
+        <record id="view_odoo_practice_form" model="ir.ui.view">
             <field name="name">model.info.form</field>
             <field name="model">model.info</field>
             <field name="arch" type="xml">
                 <form>
-                    <header >
-                        <button name = "new_field" string = "Pass a value button " type = "object" class = "oe_highlight"/>
-                        <field name = "status" widget = "statusbar"/>
-                        <button name = "resignation" string = "Resigned" type = "object" class ="oe_highlighht"/>
+                    <header>
+                        <button name="new_field" string="Pass a value button " type="object" class="oe_highlight"/>
+                        <field name="status" widget="statusbar"/>
+                        <button name="resignation" string="Resigned" type="object" class="oe_highlighht"/>
                         <button name="revert_to_active" string="Revert to Active" type="object" class="oe_highlight"/>
+<!--                        <button name="%(practice.action_odoo_practice_wizard)d" string="update info" type="action" class="btn-primary"/>-->
+                        <button name="action_email_template" string="email_template" type="object" class="oe_highlighht"/>
                     </header>
                     <sheet>
-
                         <group>
-
                             <group>
-                                <field name="name" />
-                            </group>
-
-                            <group>
+                                <field name="name"/>
                                 <field name="dob"/>
+                                <field name="country" widget="many2onebutton"/>
                             </group>
-                             <group>
-                                 <field name="country" widget = "many2onebutton"/>
-                             </group>
-
-                             <group>
-                                 <field name="country_ids" widget = "many2many_tags" options = "{'no-open ': True,'no-create':True}"/>
-                             </group>
-
-                               <group>
-                                   <field name="country_code"/>
-                                </group>
-
                             <group>
+                                <field name="country_ids" widget="many2many_tags"
+                                       options="{'no-open ': True,'no-create':True}"/>
+                                <field name="country_code"/>
                                 <field name="gender"/>
-                            </group>
-
-                            <group>
-                                <field name ="mobile"/>
-                                 <field name ="age"/>
+                                <field name="mobile"/>
+                                <field name="age"/>
                             </group>
                         </group>
                         <br/>
-                            <div style = "float:right;padding-right:30px;">
-                                    <div style ="float:left;">
-                                        <h6 style = "margin-bottom:-10px,margin-top:10px;">In Hand Salary</h6><br/>
-                                        <h6 style = "margin-bottom:-10px;">EPF+ESI</h6><br/>
-                                        <h6 style = "margin-bottom:-10px;">CTC Salary</h6><br/>
-                                    </div>
-                                    <div style = "float:right;">
-                                        <field name = "hand_salary"/><br/>
-                                        <field name = "epf_esi"/><br/>
-                                        <field name = "ctc_salary"/><br/>
-                                    </div>
+                        <div style="float:right;padding-right:30px;">
+                            <div style="float:left;">
+                                <h6 style="margin-bottom:-10px,margin-top:10px;">In Hand Salary</h6>
+                                <br/>
+                                <h6 style="margin-bottom:-10px;">EPF+ESI</h6>
+                                <br/>
+                                <h6 style="margin-bottom:-10px;">CTC Salary</h6>
+                                <br/>
                             </div>
+                            <div style="float:right;">
+                                <field name="hand_salary"/>
+                                <br/>
+                                <field name="epf_esi"/>
+                                <br/>
+                                <field name="ctc_salary"/>
+                                <br/>
+                            </div>
+                        </div>
                     </sheet>
 
-                     <!-- Chatter start -->
+                    <!-- Chatter start -->
                     <div class="oe_chatter">
                         <field name="message_follower_ids" groups="base.group_user"/>
                         <field name="message_ids"/>
@@ -73,50 +65,51 @@
         </record>
 
         <!--tree view-->
-         <record id="view_odoo_practice_tree" model="ir.ui.view">
+        <record id="view_odoo_practice_tree" model="ir.ui.view">
             <field name="name">model.info.tree</field>
             <field name="model">model.info</field>
             <field name="arch" type="xml">
-                <tree string = "practice_view_tree" decoration-info="status == 'active'" decoration-danger="status == 'resign'">
-                    <field name="sequence" widget = "handle" />
-                    <field name="name" />
+                <tree string="practice_view_tree" decoration-info="status == 'active'"
+                      decoration-danger="status == 'resign'">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
                     <field name="dob"/>
                     <field name="country"/>
                     <field name="country_ids"/>
                     <field name="gender"/>
-                    <field name = "status"/>
-                    <field name ="mobile"/>
-                    <field name ="age"/>
-                    <field name = "hand_salary"/>
-                    <field name = "epf_esi"/>
-                    <field name = "ctc_salary"/>
+                    <field name="status"/>
+                    <field name="mobile"/>
+                    <field name="age"/>
+                    <field name="hand_salary"/>
+                    <field name="epf_esi"/>
+                    <field name="ctc_salary"/>
                 </tree>
             </field>
         </record>
 
 
-          <!--search view-->
-           <record id="view_odoo_practice_search" model="ir.ui.view">
+        <!--search view-->
+        <record id="view_odoo_practice_search" model="ir.ui.view">
             <field name="name">model.info.search</field>
             <field name="model">model.info</field>
             <field name="arch" type="xml">
-                <search string = "practice_view_search">
-                    <field name="name" />
+                <search string="practice_view_search">
+                    <field name="name"/>
                     <field name="dob"/>
-                    <field name="country" filter_domain = "['|',('name','ilike','self'),('country','ilike','self')]"/>
-                    <field name="country_ids" />
-                    <field name = "status"/>
-                    <field name ="age"/>
+                    <field name="country" filter_domain="['|',('name','ilike','self'),('country','ilike','self')]"/>
+                    <field name="country_ids"/>
+                    <field name="status"/>
+                    <field name="age"/>
                     <separator/>
-                    <filter string = "male" name = "male" domain = "[('gender','=','male' )]"/>
-                     <filter string = "female" name = "female"  domain = "[('gender','=','female' )]"/>
+                    <filter string="male" name="male" domain="[('gender','=','male' )]"/>
+                    <filter string="female" name="female" domain="[('gender','=','female' )]"/>
                     <separator/>
-                      <filter string = "Active" name = "active" domain = "[('status','=','active' )]"/>
-                      <filter string = "Resign" name = "resign"  domain = "[('gender','=','resign' )]"/>
-                    <group string = "group_by" expand = '0'>
-                        <filter string = "Gender" name = "gender" context = "{'group_by':'gender'}"/>
+                    <filter string="Active" name="active" domain="[('status','=','active' )]"/>
+                    <filter string="Resign" name="resign" domain="[('gender','=','resign' )]"/>
+                    <group string="group_by" expand='0'>
+                        <filter string="Gender" name="gender" context="{'group_by':'gender'}"/>
                         <separator/>
-                        <filter string = "Status" name = "status" context = "{'group_by':'status'}"/>
+                        <filter string="Status" name="status" context="{'group_by':'status'}"/>
                     </group>
                 </search>
             </field>
@@ -124,24 +117,24 @@
 
 
         <!--Action Window-->
-         <record id="action_odoo_practice" model="ir.actions.act_window">
+        <record id="action_odoo_practice" model="ir.actions.act_window">
             <field name="name">Practice</field>
             <field name="res_model">model.info</field>
-             <field name="view_mode">tree,form,search</field>
+            <field name="view_mode">tree,form,search</field>
             <field name="help" type="html">
                 <p class="0_view_nocontent_smiling_face">
                     Create your odoo module!
                 </p>
             </field>
-             <field name = "context">{'search_default_gender':1} </field>
-<!--             <field name = "domain">[('gender','=','male' )]</field>-->
+            <field name="context">{'search_default_gender':1}</field>
+            <!--             <field name = "domain">[('gender','=','male' )]</field>-->
         </record>
 
-         <menuitem id="menu_practice_master"
-                   name="practice"
-                   parent="menu_practice_root"
-                   action="action_odoo_practice"
-                   sequence="4"/>
+        <menuitem id="menu_practice_master"
+                  name="practice"
+                  parent="menu_practice_root"
+                  action="action_odoo_practice"
+                  sequence="4"/>
 
     </data>
 </odoo>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--form view-->
+        <record id="view_odoo_practice_wizard_form" model="ir.ui.view">
+            <field name="name">model.info.wizard.form</field>
+            <field name="model">model.info.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="dob"/>
+                                <field name="country" widget="many2onebutton"/>
+                                <field name="country_ids" widget="many2many_tags"
+                                       options="{'no-open ': True,'no-create':True}"/>
+                            </group>
+                            <group>
+                                <field name="country_code"/>
+                                <field name="gender"/>
+                                <field name="mobile"/>
+                                <field name="age"/>
+                            </group>
+                        </group>
+                        <br/>
+                        <div style="float:right;padding-right:30px;">
+                            <div style="float:left;">
+                                <h6 style="margin-bottom:-10px,margin-top:10px;">In Hand Salary</h6>
+                                <br/>
+                                <h6 style="margin-bottom:-10px;">EPF+ESI</h6>
+                                <br/>
+                                <h6 style="margin-bottom:-10px;">CTC Salary</h6>
+                                <br/>
+                            </div>
+                            <div style="float:right;">
+                                <field name="hand_salary"/>
+                                <br/>
+                                <field name="epf_esi"/>
+                                <br/>
+                                <field name="ctc_salary"/>
+                                <br/>
+                            </div>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!--Action Window-->
+        <record id="action_odoo_practice_wizard" model="ir.actions.act_window">
+            <field name="name">Practice wizard</field>
+            <field name="res_model">model.info.wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="view_id" ref="view_odoo_practice_wizard_form"/>
+        </record>
+    </data>
+</odoo>

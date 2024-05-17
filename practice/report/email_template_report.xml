@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<!--    py file = practice.py-->
+    <template id="model_info">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <h1>Email Template</h1>
+                        <h3>Name:
+                            <t style="text-transform: uppercase;" t-esc="o.name"/>
+                        </h3>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_email_template_info" model="ir.actions.report">
+        <field name="name">Print Email Template</field>
+        <field name="model">model.info</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">practice.model_info</field>
+        <field name="report_file">practice.model_info</field>
+        <field name="binding_model_id" ref="model_model_info"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

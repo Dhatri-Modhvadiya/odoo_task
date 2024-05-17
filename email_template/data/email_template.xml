@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id = "employee_email_template" model = "mail.template">
+            <field name = "name" >Employee Email Template</field>
+            <field name="model_id" ref = "practice.model_model_info"></field>
+            <field name="subject">employee information</field>
+            <field name= "email_from">{{object.create_uid.email_formatted or ' '}}</field>
+            <field name="email_to">{{object.employee_info.email or ' '}}</field>
+            <field name="partner">{{object.write_uid.partner_id.id  or False}}</field>
+            <field name="body_html">
+                Dear Employeee,
+                    Your information is given below
+                Thank You,
+                Braiknvire Infoteh
+            </field>
+
+
+        </record>
+    </data>
+</odoo>
