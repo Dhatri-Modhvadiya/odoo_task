@@ -10,9 +10,9 @@
                         <h2>Emp ID:
                             <t t-esc="o.employee_ids"/>
                         </h2>
-                        <h3>Name:
-                            <t style="text-transform: uppercase;" t-esc="o.name"/>
-                        </h3>
+<!--                        <h3>Name:-->
+<!--                            <t style="text-transform: uppercase;" t-esc="o.name"/>-->
+<!--                        </h3>-->
 <!--                        <table class="table table-sm o_main_table table-borderless mt-4" style="text-align: center;">-->
 <!--                            <thead>-->
 <!--                                <tr>-->

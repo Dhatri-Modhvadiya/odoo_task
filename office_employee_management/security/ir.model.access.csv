@@ -9,3 +9,6 @@ access.office_employee_management.demo.demo,access_office_employee_management_de
 
 access.office_employee_management.department.info,access_office_employee_management_department_info,model_department_info,base.group_user,1,1,1,1
 
+
+access.office_employee_management.xlreport.wizard,access_office_employee_management_xlreport_wizard,model_xlreport_wizard,base.group_user,1,1,1,1
+

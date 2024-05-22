@@ -15,6 +15,8 @@
                         <button name="revert_to_active" string="Revert to Active" type="object" class="oe_highlight"/>
 <!--                        <button name="%(practice.action_odoo_practice_wizard)d" string="update info" type="action" class="btn-primary"/>-->
                         <button name="action_email_template" string="email_template" type="object" class="oe_highlighht"/>
+                        <button name="action_email_template" string="Print Excel Report" type="object" class="oe_highlighht"/>
+
                     </header>
                     <sheet>
                         <group>

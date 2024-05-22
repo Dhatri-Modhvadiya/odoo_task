@@ -6,10 +6,10 @@ class TemplateEmail(models.Model):
         ctx = {
             'default_model': 'res.partner',
             'default_res_ids': self.ids,
-            'default_template_id': "practice.customer_email_template",
+            'default_template_id': "practice.mail_res_partner_template_blog",
             'default_composition_mode': 'comment',
             'mark_so_as_sent': True,
-            'default_email_layout_xmlid': 'mail.mail_notification_layout_with_responsible_signature',
+            'default_email_layout_xmlid': 'mail.mail_notification_layout',
             'proforma': self.env.context.get('proforma', False),
             'force_email': True,
 

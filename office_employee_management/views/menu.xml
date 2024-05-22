@@ -31,4 +31,17 @@
 <!--              parent="menu_office_root"-->
 <!--              sequence="6"/>-->
 
+      <record id="xlreport_wizard_inherit_sale_master" model="ir.ui.menu">
+        <field name="name">Excel print</field>
+        <field name="parent_id" ref="sale.sale_menu_root"/> <!-- Reference to the parent menu -->
+        <field name="sequence" eval="100"/> <!-- Define the sequence of your submenu -->
+     </record>
+
+
+    <menuitem id="sale_ordersa_xl_inherit_submenu"
+              name="Print Excel Report"
+              parent="xlreport_wizard_inherit_sale_master"
+              action="office_employee_management.xlreport_wizard_action_id"/>
+
+
 </odoo>

@@ -10,9 +10,6 @@
                 <group>
                     <field name="customer_rank" invisible="1"/>
                 </group>
-                <header>
-                    <button string="Send Mail" name="action_email_template" type="object" class="oe_highlight" invisible="customer_rank==0"/>
-                </header>
             </xpath>
         </field>
     </record>

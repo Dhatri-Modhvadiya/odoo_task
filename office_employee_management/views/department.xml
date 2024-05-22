@@ -38,6 +38,24 @@
         </record>
 
 
+        <record id="email_customer_view_my" model="ir.ui.view">
+        <field name="name">res.partner_view_id</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                 <group>
+                        <field name="customer_rank" invisible="1"/>
+                    </group>
+                <header>
+ <button name="action_send_email" type="object" string="Send Mail"
+                                invisible="customer_rank == 0"/>
+                </header>
+            </xpath>
+        </field>
+    </record>
+
+
         <!--Action Window-->
         <record id="action_office_department" model="ir.actions.act_window">
             <field name="name">department.info</field>
