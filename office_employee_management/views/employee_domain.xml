@@ -8,6 +8,11 @@
             <field name="model">domain.info</field>
             <field name="arch" type="xml">
                 <form>
+                    <header>
+                        <!--button for ORM methods start here-->
+                        <button name="check_orm" string="Check_Orm" type="object" class="oe_highlight"/>
+                        <!--button for ORM methods end here-->
+                    </header>
                     <!--defining smart button start here-->
                     <header>
                      <div name="button_box" position="inside">
@@ -24,6 +29,7 @@
                                 <field name="allocated_floor"/>
                                 <field name = "tl_name"/>
                                 <field name = "domain_selection"/>
+                                  <field name = "gender"/>
                             </group>
                         </group>
                     </sheet>
@@ -43,6 +49,7 @@
                     <field name="allocated_floor"/>
                     <field name = "domain_selection"/>
                      <field name = "tl_name"/>
+                      <field name = "gender"/>
                 </tree>
             </field>
         </record>
@@ -58,6 +65,7 @@
                     <field name="allocated_floor"/>
                     <field name = "domain_selection"/>
                     <field name = "tl_name"/>
+                      <field name = "gender"/>
 
                     <separator/>
                     <filter name="odoo" string="Odoo" domain="[('domain_selection','=','odoo')]"/>

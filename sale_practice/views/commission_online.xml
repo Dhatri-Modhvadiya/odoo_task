@@ -2,6 +2,22 @@
 <odoo>
     <data>
 
+        <record id="view_order_form_discount" model="ir.ui.view">
+        <field name="name">sale.order.form.discount</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='other_information']" position="after">
+                <page string="Discount">
+                    <group>
+                        <field name="discount"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+
 
         <!--tree view-->
         <record id="view_commission_online_model_tree" model="ir.ui.view">
@@ -38,3 +54,20 @@
 
 </odoo>
 
+
+
+<!--        &lt;!&ndash; form view &ndash;&gt;-->
+<!--        <record id="custom_field_form_view_id" model="ir.ui.view">-->
+<!--            <field name="name">commission.online.form.inherit.custom</field>-->
+<!--            <field name="model">commission.online</field>-->
+<!--            <field name="inherit_id" ref="sale.view_order_form"/>-->
+<!--&lt;!&ndash;            <field name="arch" type="xml">&ndash;&gt;-->
+<!--&lt;!&ndash;                &lt;!&ndash; Locate the notebook in the form view &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                <xpath expr="//notebook/page[@name='other_information']" position="after">&ndash;&gt;-->
+<!--&lt;!&ndash;                    &lt;!&ndash; Add the new field inside the personal information page of the notebook &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;                    <field name="discount"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                </xpath>&ndash;&gt;-->
+<!--&lt;!&ndash;            </field>&ndash;&gt;-->
+
+<!--            -->
+<!--        </record>-->

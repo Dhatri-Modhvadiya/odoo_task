@@ -8,3 +8,7 @@ class MemberInformation(models.Model):
     email = fields.Char(string='Email')
     phone = fields.Integer(string='Phone')
     address = fields.Text(string='Address')
+
+class JavascriptFunction(models.Model):
+    _inherit = 'sale.order'
+

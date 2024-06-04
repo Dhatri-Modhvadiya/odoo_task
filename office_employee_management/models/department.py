@@ -8,11 +8,13 @@ class Department(models.Model):
     # fields
     name = fields.Char(string="Name", required=True)
     description = fields.Text(string="Description")
-    manager = fields.Many2one('employee.info', string="Manager")
+    manager = fields.Many2one('domain.info', string="Manager")
     employee_ids = fields.Many2many('employee.info', string="Employees")
 
 class ResPartner(models.Model):
     _inherit = "res.partner"
+
+
 
     def customerPrint(self):
         return self.env.ref("office_employee_management.action_report_res_partner").report_action(self)
@@ -46,3 +48,4 @@ class ResPartner(models.Model):
             'target': 'new',
             'context': ctx,
         }
+

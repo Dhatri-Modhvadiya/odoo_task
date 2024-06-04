@@ -4,6 +4,7 @@ from . import salary
 from . import employee_domain
 from . import leave_management
 from . import department
+from . import hr_expense
 
 
  

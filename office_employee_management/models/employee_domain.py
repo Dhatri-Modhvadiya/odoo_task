@@ -19,6 +19,8 @@ class Employee_domain(models.Model):
 
     # field for smart button
     listed_property_count = fields.Integer(string='Listed Property Count', compute='_compute_listed_property_count')
+    gender = fields.Selection([ ( 'male','Male'), ('female', 'Female')], string='gender')
+
 
     # function for smart button start here
     def action_order_list(self):
@@ -45,11 +47,12 @@ class Employee_domain(models.Model):
         res = super(Employee_domain, self).create(vals)
         print("created values is :", vals)
         return res
-    def unlink(self):
-        if self.domain_selection == 'odoo':
-            raise ValidationError("You cannot delete odoo domain")
-        res = super(Employee_domain, self).unlink()
-        return res
+
+    # def unlink(self):
+    #     if self.domain_selection == 'Shopify':
+    #         raise ValidationError("You cannot delete odoo domain")
+    #     res = super(Employee_domain, self).unlink()
+    #     return res
 
     def write(self,vals):
         res = super(Employee_domain,self).write(vals)
@@ -57,8 +60,48 @@ class Employee_domain(models.Model):
         print("Write method is triggered",vals)
         return res
 
-    def copy(self,default = None):
-        if self.domain_selection == 'odoo':
-            raise ValidationError("You cannot duplicate the record")
-        res = super(Employee_domain, self).copy(default)
-        return res
+    # def copy(self,default = None):
+    #     if self.domain_selection == 'odoo':
+    #         raise ValidationError("You cannot duplicate the record")
+    #     res = super(Employee_domain, self).copy(default)
+    #     return res
+
+    def check_orm(self):
+        search_var = self.env['domain.info'].search([('gender','=','male')])
+        print("Search for var", search_var)
+        for rec in search_var :
+            print("Team Lead Name =======>>>",rec.tl_name,'gender==>>>',rec.gender)
+
+        search_count =  self.env['domain.info'].search_count([('gender','=','female')])
+        print("Search for var", search_count)
+
+        browse =  self.env['domain.info'].browse(1)
+        print("browse method>>>>>",browse,"employee:-",browse.employee_size,"TL-",browse.tl_name)
+        browse.unlink()
+        print("unlink method executed")
+
+        ref =  self.env.ref("office_employee_management.view_office_domain_form").id
+        print("ref_method>>>>>>>>>",ref)
+
+        create_var = self.env['domain.info'].create({
+            "tl_name" : "Diya Patel ",
+            "domain_selection" : "odoo",
+            "gender" : "female"
+        })
+        print("Create var", create_var.id)
+
+        write_orm = self.env['domain.info'].browse(5)
+        write_orm.write(
+            {
+            "tl_name": "Diya Patel DineshBhai ",
+            "domain_selection": "Shopify",
+            "gender": "female"
+        })
+        print("WRITE var", create_var.id)
+
+
+
+
+
+
+

@@ -15,10 +15,14 @@ class CommissionOnLine(models.Model):
 
 
 
+
+
 # inherit sale.oder model
 class SaleOrder(models.Model):
     _inherit = "sale.order"
     commission = fields.Float(string="Commission")
+    discount = fields.Float(string ="Discount")
+
 
 
     # defining function if we click on confirm button in sale.order model so that confirm order will show in our custom(commission.online) model

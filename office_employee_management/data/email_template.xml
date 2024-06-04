@@ -8,7 +8,7 @@
             <field name="email_to">{{object.email}}</field>
             <field name="subject">Mail Template: Demo Mail</field>
 <!--            <field name="report_template_ids" eval="[(4, ref('office_employee_management.action_report_department_info'))]"/>-->
-            <field name="body_html" type="html">
+            <field name="body_html"  type="html">
                 <div style="margin: 0px; padding: 0px;">
                     <div style="justify-content: center; padding:0.6rem;padding-left: 35px;text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;width:40%">
                         <h5>

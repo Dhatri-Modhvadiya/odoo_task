@@ -67,6 +67,17 @@
             </field>
         </record>
 
+        <record id="view_tree_inherit" model="ir.ui.view">
+        <field name="name">sale.order</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="js_class">model_sale</attribute>
+            </xpath>
+        </field>
+    </record>
+
         <!--Action Window-->
          <record id="action_library_member" model="ir.actions.act_window">
             <field name="name">Member</field>
