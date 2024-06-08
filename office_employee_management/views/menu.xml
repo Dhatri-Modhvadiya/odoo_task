@@ -26,6 +26,11 @@
               parent="menu_office_root"
               sequence="4"/>
 
+    <menuitem id="menu_method_master"
+              name="Methods"
+              parent="menu_office_root"
+              sequence="5"/>
+
 <!--     <menuitem id = "menu_department_master"-->
 <!--              name = "Leave"-->
 <!--              parent="menu_office_root"-->

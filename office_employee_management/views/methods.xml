@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--form view-->
+        <record id="view_office_department_form" model="ir.ui.view">
+            <field name="name">department.info</field>
+            <field name="model">department.info</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="description"/>
+                                <field name="manager"/>
+                            </group>
+                        </group>
+                        <field name="employee_ids" widget="many2many_tags"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!--tree view-->
+        <record id="view_office_department_tree" model="ir.ui.view">
+            <field name="name">department.info.tree</field>
+            <field name="model">department.info</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="manager"/>
+                    <field name="employee_ids"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="email_customer_view_my" model="ir.ui.view">
+        <field name="name">res.partner_view_id</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                 <group>
+                        <field name="customer_rank" invisible="1"/>
+                    </group>
+                <header>
+ <button name="action_send_email" type="object" string="Send Mail"
+                                invisible="customer_rank == 0"/>
+                </header>
+            </xpath>
+        </field>
+    </record>
+
+
+       <record id="view_hr_exre_tree_inherit" model="ir.ui.view">
+        <field name="name">hr.expense</field>
+        <field name="model">hr.expense</field>
+        <field name="inherit_id" ref="hr_expense.hr_expense_view_expenses_analysis_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="js_class">model_hr</attribute>
+            </xpath>
+        </field>
+    </record>
+
+        <!--Action Window-->
+        <record id="action_office_method" model="ir.actions.act_window">
+            <field name="name">department.info</field>
+            <field name="res_model">department.info</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="0_view_nocontent_smiling_face">
+                    Create your domain !
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_office_method"
+                  name="Method"
+                  parent="menu_method_master"
+                  action="action_office_method"
+                  sequence="1"/>
+
+    </data>
+</odoo>

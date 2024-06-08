@@ -12,3 +12,18 @@ class MemberInformation(models.Model):
 class JavascriptFunction(models.Model):
     _inherit = 'sale.order'
 
+
+class SaleOrderLines(models.Model):
+    _inherit = "hr.expense"
+
+    def print_report(self):
+        print("<<<<<<<<<<<<>>>>>>>>>>>>",self.ids)
+        # if len(self.ids) < 1:
+        #     data = self.env["hr.expense"].search([])
+        #     print(data)
+        #     action = self.env.ref('library_management.action_hr_expense').with_context(my_report = True, order_lines = data).report_action(data)
+        #     return action
+        # else:
+        #     action = self.env.ref('library_management.action_hr_expense').with_context(my_report = True, order_lines = self).report_action(self)
+        #     return action
+        #

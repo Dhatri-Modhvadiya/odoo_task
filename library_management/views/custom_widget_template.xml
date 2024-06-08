@@ -1,0 +1,16 @@
+<!-- library_management/views/templates.xml -->
+<odoo>
+    <template id="assets_frontend" inherit_id="web.assets_frontend" name="library_management assets">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/library_management/static/src/js/custom_widget.js"></script>
+        </xpath>
+    </template>
+
+    <!-- Add this block -->
+    <template id="custom_template" name="Custom Template">
+        <t t-call="web.layout">
+            <div class="oe_structure"/>
+            <div class="custom_widget_selector"></div>
+        </t>
+    </template>
+</odoo>

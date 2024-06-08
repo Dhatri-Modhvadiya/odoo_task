@@ -53,6 +53,25 @@
         </record>
 
 
+
+        <!-- library_management/views/library_management_views.xml -->
+
+    <record id="view_form_library_management" model="ir.ui.view">
+        <field name="name">book.info.form</field>
+        <field name="model">book.info</field>
+        <field name="arch" type="xml">
+            <form string="Library Management">
+                <!-- Other fields and elements -->
+                <group>
+                    <!-- Add this element where you want the widget to be placed -->
+                    <div class="custom_widget_selector"></div>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+
         <!--pivot view-->
         <record id="view_library_history_pivot" model="ir.ui.view">
             <field name="name">history.info.pivot</field>

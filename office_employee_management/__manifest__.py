@@ -22,15 +22,21 @@
              "views/employee_domain.xml",
              "views/leave_management.xml",
              "views/department.xml",
+             # "views/custom_widget_template.xml",
              # "views/hr_expense.xml",
              # "views/assets.xml",
              "reports/emp_management_report.xml",
-             "reports/department_report.xml"
+             "reports/department_report.xml",
     ],
     'assets': {
         'web.assets_backend': [
-            'office_employee_management/static/src/xml/template.xml',
+        #     'library_management/static/src/js/custom_class.js',
+
         ],
+
+        'web.assets_frontend': [
+            'library_management/static/src/js/custom_widget.js',
+        ]
     },
     'demo': [],
     'installable': True,
