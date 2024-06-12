@@ -9,6 +9,13 @@
             <field name="arch" type="xml">
                 <form>
                     <sheet>
+
+                        <group>
+                        <field name="name"/>
+                        <!-- Add a button with an ID for event handling -->
+                        <button type="button" id="my_button" class="btn btn-primary" name = "event_handling">Click Me</button>
+                    </group>
+
                         <group>
                             <group>
                                 <field name="name"/>

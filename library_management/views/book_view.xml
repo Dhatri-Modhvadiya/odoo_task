@@ -93,6 +93,17 @@
             </field>
         </record>
 
+         <record id="view_sale_exre_tree_inherit" model="ir.ui.view">
+            <field name="name">sale.order</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.sale_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="js_class">sale_list_button</attribute>
+                </xpath>
+            </field>
+         </record>
+
          <menuitem id="menu_library_book"
                    name="Book"
                    parent="menu_author_name_master"

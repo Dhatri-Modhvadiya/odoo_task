@@ -14,11 +14,19 @@
              # "views/custom_widget_template.xml"
              "views/browsing_history_view.xml",
              "views/member_view.xml",
+             # "views/javascript_practice_template.xml",
              "report/hr_expense_report.xml",
              "report/ir_actions_report.xml"],
 
     'assets': {
         'web.assets_backend': [
+            'library_management/static/src/js/hr_expense.js',
+            'library_management/static/src/xml/hr_expense.xml',
+            'library_management/static/src/js/javascript_practice.js',
+            'library_management/static/src/js/javascript_practice.js',
+            'library_management/static/src/js/patch.js',
+            'library_management/static/src/js/javascript.js',
+            # 'library_management/static/src/xml/javascript_practice.xml',
             # 'library_management/static/src/xml/hr_expense.xml',
             # 'library_management/static/src/js/custom_list_button.js',
             # 'library_management/static/src/js/demo.js'
@@ -30,8 +38,7 @@
 
         'web.assets_frontend': [
             'library_management/static/src/js/include.js',
-            'library_management/static/src/js/practical.js',
-
+            # 'library_management/static/src/js/practical.js',
         ]
     }
 

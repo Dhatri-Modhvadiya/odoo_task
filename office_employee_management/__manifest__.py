@@ -18,7 +18,8 @@
              "wizard/excel_report.xml",
              "views/menu.xml",
              "views/employee_info.xml",
-             "views/salary.xml",
+             "views/methods.xml",
+             # "views/salary.xml",
              "views/employee_domain.xml",
              "views/leave_management.xml",
              "views/department.xml",
@@ -31,12 +32,10 @@
     'assets': {
         'web.assets_backend': [
         #     'library_management/static/src/js/custom_class.js',
-
+        #     'office_employee_management/static/src/js/department.js'
         ],
 
-        'web.assets_frontend': [
-            'library_management/static/src/js/custom_widget.js',
-        ]
+
     },
     'demo': [],
     'installable': True,

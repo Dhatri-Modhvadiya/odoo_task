@@ -1,21 +1,24 @@
-/ @odoo-module /
+/** @odoo-module **/
 import { ListController } from "@web/views/list/list_controller";
 import { listView } from "@web/views/list/list_view";
 import { registry } from "@web/core/registry";
-import { ExpenseListController } from '@hr_expense/views/list';
 
-class HrExpenseListController extends ExpenseListController {
+
+class SalesReport extends ListController {
     setup(){
-        super.setup()
-        console.log('js is loaded')
+        super.setup();
+        console.log('js is loaded');
     }
+
+    async demo(){
+     alert("DEMO");
+   }
 }
+SalesReport.template = 'library_management.salenewbutton';
 
-HrExpenseListController.template = 'event_managment_system.HrExpenseListViews'
-
-export const hrExpenseListView = {
+export const SalesReportListView = {
     ...listView,
-    Controller: HrExpenseListController,
+    Controller: SalesReport,
 }
 
-registry.category("views").add('hr_expense_list_view',hrExpenseListView)
+registry.category("views").add('sale_list_button',SalesReportListView);

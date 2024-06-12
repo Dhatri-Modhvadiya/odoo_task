@@ -22,6 +22,12 @@ PortalSidebar.include({
             element.addEventListener('click', function(){
                 alert("It's a Sidebar of Purchase Orders")
             })
+
+              let button = document.createElement("button");
+              button.textContent = "Click Me";
+              button.style.backgroundColor = "#ffffff";
+              element.appendChild(button);
+
         } else {
             console.warn("Element with class 'col-lg-3 col-xl-4 d-print-none' not found");
         }

@@ -1,15 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--<templates>-->
+<!--    <t t-name="library_management.ListButtons" t-inherit="hr_expense.ListButtons" t-inherit-mode="extension">-->
+<!--        <xpath expr="//div[hasclass('o_list_buttons')]" position="inside">-->
+<!--            <button class="btn btn-secondary" t-on-click="actionHrList">-->
+<!--                send notification</button>-->
+<!--        </xpath>-->
+<!--    </t>-->
+<!--</templates>-->
 
 <!-- Extend the ListButtons template to add the Send Notification button -->
 <templates>
     <t t-name="library_management.HrExpenseListViews" t-inherit="hr_expense.ListButtons" t-inherit-mode="extension" owl="1">
         <!-- hr.expense and hr.expense.sheet -->
         <xpath expr="//button[@t-if='displayCreateReport()']" position="after">
-            <button class="d-none d-md-block btn btn-secondary" t-on-click="action_hrList">
+            <button class="d-none d-md-block btn btn-secondary" t-on-click="actionHrList">
                 Send Notification
             </button>
         </xpath>
     </t>
+
+
+    <t t-name="library_management.modelInfoBtn" t-inherit="web.FormView" t-inherit-mode="extension">
+        <xpath expr="//t[@t-set-slot='layout-actions']" position="inside">
+            <button class="btn btn-primary" t-on-click="demo"> Info </button>
+        </xpath>
+    </t>
+
+
+    <t t-name="library_management.salenewbutton" t-inherit="web.ListView">
+        <xpath expr="//t[@t-set-slot='layout-buttons']" position="inside">
+            <button class="btn btn-primary" t-on-click="demo"> SaleButton </button>
+        </xpath>
+    </t>
+
+
+<!---->
 
 
 <!--    <?xml version="1.0" encoding="UTF-8"?>-->
@@ -41,3 +66,5 @@
 
 
 </templates>
+
+

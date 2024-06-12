@@ -11,25 +11,25 @@
               parent="menu_office_root"
               sequence="1"/>
 
-    <menuitem id="menu_office1_master"
-              name="Data1"
-              parent="menu_office_root"
-              sequence="2"/>
+<!--    <menuitem id="menu_office1_master"-->
+<!--              name="Data1"-->
+<!--              parent="menu_office_root"-->
+<!--              sequence="2"/>-->
 
     <menuitem id = "menu_leave_master"
               name = "Leave"
               parent="menu_office_root"
               sequence="3"/>
 
-    <menuitem id = "menu_salary_master"
-              name = "Salary"
-              parent="menu_office_root"
-              sequence="4"/>
+<!--    <menuitem id = "menu_salary_master"-->
+<!--              name = "Salary"-->
+<!--              parent="menu_office_root"-->
+<!--              sequence="4"/>-->
 
-    <menuitem id="menu_method_master"
-              name="Methods"
-              parent="menu_office_root"
-              sequence="5"/>
+<!--    <menuitem id="menu_method_master"-->
+<!--              name="Methods"-->
+<!--              parent="menu_office_root"-->
+<!--              sequence="5"/>-->
 
 <!--     <menuitem id = "menu_department_master"-->
 <!--              name = "Leave"-->

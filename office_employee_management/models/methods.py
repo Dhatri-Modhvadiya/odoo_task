@@ -1,6 +1,5 @@
 from odoo import models, fields, api
-
-class Department(models.Model):
+class MethodModel(models.Model):
     # Attributes
     _name = "method.info"
     _description = "orm methods"
@@ -8,8 +7,20 @@ class Department(models.Model):
     # fields
     name = fields.Char(string="Name", required=True)
     description = fields.Text(string="Description")
-    manager = fields.Many2one('domain.info', string="Manager")
-    employee_ids = fields.Many2many('employee.info', string="Employees")
+    # manager = fields.Char(string="Manager")
+    # employee_ids = fields.Integer(string="Employee_Id")
+
+
+
+
+    @api.model
+    def create(self,values):
+        print("values of create method",values)
+        print("self",self)
+        rtn = super(MethodModel,self).create(values)
+        print("return statement ",rtn)
+        return rtn
+
 
 
 

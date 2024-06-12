@@ -37,7 +37,7 @@
         </record>
 
         <!--Action Window-->
-         <record id="action_office_salary" model="ir.actions.act_window">
+         <record id="menu_office_salary" model="ir.actions.act_window">
             <field name="name">Salary</field>
             <field name="res_model">salary.info</field>
              <field name="view_mode">tree,form</field>
@@ -51,7 +51,7 @@
          <menuitem id="menu_office_salary"
                    name="Salary"
                    parent="menu_salary_master"
-                   action="action_office_salary"
+                   action="menu_leave_master"
                    sequence="4"/>
 
     </data>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates>
+    <t t-name="bank.modelInfoBtn" t-inherit="web.FormView">
+        <xpath expr="//t[@t-set-slot='layout-actions']" position="inside">
+            <button class="btn btn-primary" t-on-click="()=>actionInfoForm()"> Info </button>
+        </xpath>
+    </t>
+
+</templates>

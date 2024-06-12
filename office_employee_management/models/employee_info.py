@@ -87,18 +87,18 @@ class EmployeeInformation(models.Model):
     # email_sent = fields.Boolean('Email Sent', default=False)
     # print("email template sent")
 
-    # def test_cron_job(self):
-    #     today = fields.Date.today()
-    #     today_month_day = today.strftime('%m-%d')  # Get the month and day in 'MM-DD' format
-    #
-    #     records = self.search([])  # Get all records
-    #     for rec in records:
-    #         if rec.employee_dob and rec.employee_dob.strftime('%m-%d') == today_month_day:  # Compare month and day
-    #             email_values = {
-    #                 'email_to': rec.email,
-    #                 'subject': f"Happy Birthday {rec.display_name}"
-    #             }
-    #             print(f"Happy Birthday {rec.display_name}")
-    #             mail_template = self.env.ref('office_employee_management.customer_mail_template_blog')
-    #             mail_template.send_mail(rec.id, email_values=email_values, force_send=True)
-    #             print(f"Happy Birthday {rec.display_name} Again")
+    def test_cron_job(self):
+        today = fields.Date.today()
+        today_month_day = today.strftime('%m-%d')  # Get the month and day in 'MM-DD' format
+
+        records = self.search([])  # Get all records
+        for rec in records:
+            if rec.employee_dob and rec.employee_dob.strftime('%m-%d') == today_month_day:  # Compare month and day
+                email_values = {
+                    'email_to': rec.email,
+                    'subject': f"Happy Birthday {rec.display_name}"
+                }
+                print(f"Happy Birthday {rec.display_name}")
+                mail_template = self.env.ref('office_employee_management.customer_mail_template_blog')
+                mail_template.send_mail(rec.id, email_values=email_values, force_send=True)
+                print(f"Happy Birthday {rec.display_name} Again")
