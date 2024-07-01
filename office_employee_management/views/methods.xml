@@ -7,12 +7,19 @@
             <field name="name">method.info</field>
             <field name="model">method.info</field>
             <field name="arch" type="xml">
-                <form>
-                    <field name="name"/>
-                    <field name="description"/>
-<!--                    <field name="manager"/>-->
-<!--                    <field name="employee_ids"/>-->
-                </form>
+                <sheet>
+                    <form>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="manager"/>
+                        </group>
+                        <group>
+                            <field name="age"/>
+                            <field name="country"/>
+                        </group>
+                    </form>
+                </sheet>
             </field>
         </record>
 
@@ -25,8 +32,9 @@
                 <tree>
                     <field name="name"/>
                     <field name="description"/>
-<!--                    <field name="manager"/>-->
-<!--                    <field name="employee_ids"/>-->
+                    <field name="manager"/>
+                    <field name="age"/>
+                    <field name="country"/>
                 </tree>
             </field>
         </record>
@@ -48,7 +56,6 @@
                   parent="menu_leave_master"
                   action="action_office_method"
                   sequence="1"/>
-
 
 
     </data>

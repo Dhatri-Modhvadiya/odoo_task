@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="NotesPopup">
+        <div class="popup">
+            <div class="popup-content">
+                <textarea t-model="state.note" placeholder="Enter your notes here..."></textarea>
+                <div class="footer">
+                    <button t-on-click="confirm">Save</button>
+                    <button t-on-click="cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>

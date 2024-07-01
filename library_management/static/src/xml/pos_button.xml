@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="point_of_sale.CreateButton">
+        <button class="control-button btn btn-light rounded-0 fw-bolder" t-on-click="custom">
+            <i class="fa fa-undo me-1"/>
+            custom popup
+        </button>
+    </t>
+
+          <!--name after total in pos order side start here-->
+    <t t-name="point_of_sale.dhatri" t-inherit="point_of_sale.OrderWidget" t-inherit-mode="extension">
+        <xpath expr="//div[@t-if='props.tax']" position="after">
+            <div>
+                Name:
+                   Dhatri
+            </div>
+        </xpath>
+    </t>
+             <!--name after total in pos order side end here-->
+
+
+<t t-name="point_of_sale.customNote" t-inherit="point_of_sale.OrderWidget"
+       t-inherit-mode="extension">
+         <xpath expr="//div[hasclass('order-container')]" position="after">
+          <span class="bg-secondary custom_note"></span>
+        </xpath>
+    </t>
+
+
+
+          <!--note button in product screen start here -->
+     <t t-name="point_of_sale.notesButton">
+        <button class="control-button btn btn-light rounded-0 fw-bolder" t-on-click="() => this.onClick()">
+            <i class="fa fa-comment" role="img" aria-label="Custom Alert" title="Custom Alert"/>
+            <span> </span>
+            <span>Add Notes</span>
+        </button>
+    </t>
+         <!--note button in product screen end here -->
+
+
+
+    <!--discount button in product screen start here -->
+    <t t-name="point_of_sale.MyOrderlineDiscount">
+        <button class="control-button btn btn-light rounded-0 fw-bolder" t-on-click="() => this.onClickDiscountDefault()">
+            <i class="fa fa-sticky-note me-1" />
+            <span>My Discount</span>
+        </button>
+    </t>
+         <!--discount button in product screen end here -->
+
+<!--    <xpath expr="//notebook/page[notes]" position="inside">-->
+<!--           <t t-if="My.Note.get('library_management_system.My.Note')">-->
+<!--                using <t t-esc="My.Note['library_management_system.My.Note']" />-->
+<!--            </t>-->
+<!--    </xpath>-->
+
+
+
+
+</templates>
+

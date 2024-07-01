@@ -4,9 +4,13 @@ class MethodModel(models.Model):
     _name = "method.info"
     _description = "orm methods"
 
+
     # fields
     name = fields.Char(string="Name", required=True)
     description = fields.Text(string="Description")
+    manager = fields.Char(string = "Manager")
+    age = fields.Integer(string="Age")
+    country = fields.Many2one('res.country', string="country")
     # manager = fields.Char(string="Manager")
     # employee_ids = fields.Integer(string="Employee_Id")
 

@@ -18,7 +18,7 @@
              "wizard/excel_report.xml",
              "views/menu.xml",
              "views/employee_info.xml",
-             "views/methods.xml",
+             # "views/methods.xml",
              # "views/salary.xml",
              "views/employee_domain.xml",
              "views/leave_management.xml",

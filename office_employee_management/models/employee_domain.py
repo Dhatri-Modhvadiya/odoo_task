@@ -20,7 +20,7 @@ class Employee_domain(models.Model):
     # field for smart button
     listed_property_count = fields.Integer(string='Listed Property Count', compute='_compute_listed_property_count')
     gender = fields.Selection([ ( 'male','Male'), ('female', 'Female')], string='gender')
-
+    active = fields.Boolean('Active', default=True)
 
     # function for smart button start here
     def action_order_list(self):
@@ -44,7 +44,9 @@ class Employee_domain(models.Model):
 
     @api.model
     def create(self, vals):
+        print(self)
         res = super(Employee_domain, self).create(vals)
+        print(res)
         print("created values is :", vals)
         return res
 
@@ -55,8 +57,9 @@ class Employee_domain(models.Model):
     #     return res
 
     def write(self,vals):
+        print(self) #?
         res = super(Employee_domain,self).write(vals)
-
+        print(res)  # bool
         print("Write method is triggered",vals)
         return res
 

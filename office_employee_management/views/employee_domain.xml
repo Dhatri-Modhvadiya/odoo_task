@@ -23,6 +23,8 @@
                     </header>
                     <!--defining smart button end here-->
                     <sheet>
+                        <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                        <field name="active" invisible="1"/>
                         <group>
                             <group>
                                 <field name="employee_size" />
@@ -72,6 +74,9 @@
                     <filter name="shopify" string="Shopify" domain="[('domain_selection','=','shopify')]"/>
                     <filter name="magento" string="Magento" domain="[('domain_selection','=','magento')]"/>
                     <filter name="php" string="Php" domain="[('domain_selection','=','php')]"/>
+
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>
 
                     <group string="Group By" expand="0">
                         <filter name="domain" string="Domain" context="{'group_by':'domain_selection'}"/>

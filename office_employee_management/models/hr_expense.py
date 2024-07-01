@@ -7,3 +7,6 @@ class HrExpense(models.Model):
     def custom_list_button_method(self):
         # Implement the logic for your custom button action
         return True
+
+
+

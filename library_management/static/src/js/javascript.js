@@ -3,7 +3,6 @@ import { ListController } from "@web/views/list/list_controller";
 import { listView } from "@web/views/list/list_view";
 import { registry } from "@web/core/registry";
 
-
 class SalesReport extends ListController {
     setup(){
         super.setup();
@@ -11,8 +10,24 @@ class SalesReport extends ListController {
     }
 
     async demo(){
-     alert("DEMO");
-   }
+//     alert("DEMO");
+     var records = this.model.root.selection;
+     console.log(records)
+        let sum=0
+     for (var key in records){
+                 console.log(records[key])
+                 console.log(key + "...." + records[key].resIds)
+                 sum += records[key].data.total_amount
+                 console.log(records[key])
+                 let datas = records[key].data
+                 console.log(datas)
+                 console.log(datas.name)
+                 for (var key_1 in records[key]){
+                     console.log(key_1 + "...." + records[key].resId)
+                 }
+     }
+     console.log(sum)
+    }
 }
 SalesReport.template = 'library_management.salenewbutton';
 

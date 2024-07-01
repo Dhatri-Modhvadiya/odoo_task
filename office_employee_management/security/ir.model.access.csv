@@ -3,7 +3,6 @@ access.office_employee_management.employee_info,access_office_employee_managemen
 access.office_employee_management.salary_info,access_office_employee_management_salary_info,model_salary_info,base.group_user,1,1,1,1
 access.office_employee_management.domain_info,access_office_employee_management_domain_info,model_domain_info,base.group_user,1,1,1,1
 access.office_employee_management.leave.info,access_office_employee_management_leave_info,model_leave_info,base.group_user,1,1,1,1
-access.office_employee_management.method.info,access_office_employee_management_method_info,model_method_info,base.group_user,1,1,1,1
 
 access.office_employee_management.demo.demo,access_office_employee_management_demo_demo,model_demo_demo,base.group_user,1,1,1,1
 

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--form view-->
+        <record id="view_orm_method_form" model="ir.ui.view">
+            <field name="name">methods.info.form</field>
+            <field name="model">methods.info</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                            <field name="manager"/>
+                            <field name="employee_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--tree view-->
+        <record id="view_orm_method_tree" model="ir.ui.view">
+            <field name="name">methods.info.tree</field>
+            <field name="model">methods.info</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="manager"/>
+                    <field name="employee_ids"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--Action Window-->
+        <record id="action_orm_method" model="ir.actions.act_window">
+            <field name="name">Method</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">methods.info</field>
+            <field name="view_mode">form,tree</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="0_view_nocontent_smiling_face">
+                    Create your first book detail!
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_methods_model"
+                  name="method"
+                  parent="menu_orm_method_master"
+                  action="action_orm_method"
+                  sequence="3"/>
+
+    </data>
+</odoo>

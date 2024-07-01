@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem id = "menu_methods_root"
+                  name = "ORM Methods"
+                  sequence = "0"/>
+
+        <menuitem id = "menu_orm_method_master"
+                  name = "Method"
+                  parent = "menu_methods_root"
+                  sequence = "2"/>
+
+
+    </data>
+</odoo>

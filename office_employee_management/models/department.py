@@ -5,8 +5,9 @@ class Department(models.Model):
     _name = "department.info"
     _description = "Department"
 
+
     # fields
-    name = fields.Char(string="Name", required=True)
+    names = fields.Char(string="Name", required=True)
     description = fields.Text(string="Description")
     manager = fields.Many2one('domain.info', string="Manager")
     employee_ids = fields.Many2many('employee.info', string="Employees")

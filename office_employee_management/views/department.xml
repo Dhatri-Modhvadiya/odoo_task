@@ -11,14 +11,14 @@
                     <sheet>
 
                         <group>
-                        <field name="name"/>
+<!--                        <field name="name"/>-->
                         <!-- Add a button with an ID for event handling -->
                         <button type="button" id="my_button" class="btn btn-primary" name = "event_handling">Click Me</button>
                     </group>
 
                         <group>
                             <group>
-                                <field name="name"/>
+                                <field name="names"/>
                                 <field name="description"/>
                                 <field name="manager"/>
                             </group>
@@ -36,7 +36,7 @@
             <field name="model">department.info</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="name"/>
+                    <field name="names"/>
                     <field name="description"/>
                     <field name="manager"/>
                     <field name="employee_ids"/>
