@@ -43,7 +43,7 @@
             <field name="res_model">commission.online</field>
             <field name="view_mode">tree</field>
         </record>
-    </data>
+
 
 
     <menuitem id="menu_sale_commission_online_model"
@@ -51,7 +51,7 @@
               parent="your_module_inherit_sale_menu"
               action="action_commission_online_model"
               sequence="0"/>
-
+    </data>
 </odoo>
 
 

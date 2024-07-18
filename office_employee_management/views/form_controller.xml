@@ -1,0 +1,116 @@
+<odoo>
+    <template id="form_template" name="Form Template">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1>Form Submission</h1>
+                <form action="/form/submit" method="post">
+
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" class="form-control" required="required"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" class="form-control" required="required"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </t>
+    </template>
+
+    <template id="thankyou_page" name="Thank you">
+        <t t-call="website.layout">
+            <div class="bg-success">
+                Thankyou
+            </div>
+        </t>
+    </template>
+
+</odoo>
+
+<!--&lt;!&ndash; my_website_module/views/my_form_table_template.xml &ndash;&gt;-->
+
+<!--<odoo>-->
+<!--    <template id="my_form_table_template" name="Form and Table">-->
+<!--        <t t-call="website.layout">-->
+<!--            <div class="container">-->
+<!--                <img src="/office_employee_management/static/description/icon.png" alt="Image"/>-->
+
+<!--                <h1>Form Submission</h1>-->
+
+<!--                <form action="/form/submit" method="post">-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="name">Name</label>-->
+<!--                        <input type="text" name="name" id="name" class="form-control" required="required"/>-->
+<!--                    </div>-->
+<!--                    <div class="form-group">-->
+<!--                        <label for="email">Email</label>-->
+<!--                        <input type="email" name="email" id="email" class="form-control" required="required"/>-->
+<!--                    </div>-->
+<!--                    <button type="submit" class="btn btn-primary">Submit</button>-->
+<!--                </form>-->
+
+<!--                <button type="submit" class="o_subtitle btn-primary ">Submit</button>-->
+<!--                <hr/>-->
+
+
+<!--                <table class="table table-striped mt-4">-->
+<!--                    <thead>-->
+<!--                        <tr>-->
+<!--                            <th>Name</th>-->
+<!--                            <th>Email</th>-->
+<!--                            <th>Message</th>-->
+<!--                        </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody>-->
+<!--                        <tr>-->
+<!--                            <td>Dhatri</td>-->
+<!--                            <td>dhatri@gmail.com</td>-->
+<!--                            <td>msg from Dhatri</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td>Diya</td>-->
+<!--                            <td>diya@gmail.com</td>-->
+<!--                            <td>Msg from diya</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td>Chitra</td>-->
+<!--                            <td>chitra@gmail.com</td>-->
+<!--                            <td>hello from chitra</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td>Vishwa</td>-->
+<!--                            <td>vishwa@gmail.com</td>-->
+<!--                            <td>hello from vishwa</td>-->
+<!--                        </tr>-->
+<!--                    </tbody>-->
+<!--                </table>-->
+<!--            </div>-->
+<!--        </t>-->
+<!--    </template>-->
+<!--</odoo>-->
+
+
+<!--&lt;!&ndash;<odoo>&ndash;&gt;-->
+<!--&lt;!&ndash;<template id="form_template" name="Form Template">&ndash;&gt;-->
+<!--&lt;!&ndash;    <t t-call="website.layout">&ndash;&gt;-->
+<!--&lt;!&ndash;        <div class="container">&ndash;&gt;-->
+<!--&lt;!&ndash;            <h1>Form Submission</h1>&ndash;&gt;-->
+<!--&lt;!&ndash;            <form action="/form/submit" method="post">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <label for="name">Name</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <input type="text" name="name" id="name" class="form-control" required="required"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="form-group">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <label for="email">Email</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <input type="email" name="email" id="email" class="form-control" required="required"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                <button type="submit" class="btn btn-primary">Submit</button>&ndash;&gt;-->
+<!--&lt;!&ndash;            </form>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    </t>&ndash;&gt;-->
+<!--&lt;!&ndash;</template>&ndash;&gt;-->
+<!--&lt;!&ndash;</odoo>&ndash;&gt;-->

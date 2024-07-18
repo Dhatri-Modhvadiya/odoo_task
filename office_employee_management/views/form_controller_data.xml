@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--form view-->
+        <record id="view_form_dta_view_form" model="ir.ui.view">
+            <field name="name">form.data.form</field>
+            <field name="model">form.data</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="email"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!--tree view-->
+        <record id="view_form_dta_view_tree" model="ir.ui.view">
+            <field name="name">form.data.tree</field>
+            <field name="model">form.data</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="email"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--Action Window-->
+        <record id="action_form_data_website" model="ir.actions.act_window">
+            <field name="name">User</field>
+            <field name="res_model">form.data</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="0_view_nocontent_smiling_face">
+                    Create your form data  !
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_form_data"
+                  name="public"
+                  parent="menu_user_data"
+                  action="action_form_data_website"
+                  sequence="4"/>
+
+    </data>
+</odoo>

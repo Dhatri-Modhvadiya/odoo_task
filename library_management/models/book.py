@@ -21,13 +21,15 @@ class BookInformation(models.Model):
         return result
 
     def unlink(self):
+        print("self printed for unlink",self)
         result = super(BookInformation, self).unlink()
-        print(result)  # Print the deleted records for verification (optional)
+        print("result printed" ,result)  # Print the deleted records for verification (optional)
         return result
 
     def copy(self):
+        print("self printed",self)
         result = super(BookInformation, self).copy()
-        print(result)  # Print the deleted records for verification (optional)
+        print("result printed",result)  # Print the deleted records for verification (optional)
         return result
 
     # def search(self, domain=[('book_price', '>', 500)], offset=0, limit=None, order=None, count=False):

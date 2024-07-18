@@ -8,10 +8,10 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <button class="oe_stat_button" type="object" name="copy"
-        string="copy Book" icon="fa-plus-square-o"/>
-                        <button class="oe_stat_button" type="object" name="search"
-        string="search Book" icon="fa-plus-square-o"/>
+<!--                        <button class="oe_stat_button" type="object" name="copy"-->
+<!--        string="copy Book" icon="fa-plus-square-o"/>-->
+<!--                        <button class="oe_stat_button" type="object" name="search"-->
+<!--        string="search Book" icon="fa-plus-square-o"/>-->
                     </header>
                     <sheet>
                         <group>

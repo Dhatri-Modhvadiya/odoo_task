@@ -15,6 +15,7 @@
              # "views/custom_widget_template.xml"
              "views/browsing_history_view.xml",
              "views/member_view.xml",
+             "views/location.xml",
              # "views/javascript_practice_template.xml",
              # 'views/pos_assets.xml',
              # 'views/custon_note_pos.xml'
@@ -51,9 +52,13 @@
             'library_management/static/src/js/create_button.js',
             'library_management/static/src/js/note_button.js',
             'library_management/static/src/js/discount_button.js',
+            'library_management/static/src/js/custom_button_popup.js',
+            'library_management/static/src/js/location_button.js',
+            'library_management/static/src/xml/custom_button_popup.xml',
             'library_management/static/src/xml/pos_button.xml',
             # 'library_management/static/src/xml/pos_notes.xml',
-            'library_management/static/src/js/pos_notes.js'
+            'library_management/static/src/js/pos_notes.js',
+            'library_management/static/src/js/task-3.js',
         ],
     }
 

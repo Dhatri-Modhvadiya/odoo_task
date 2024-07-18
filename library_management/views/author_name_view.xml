@@ -16,6 +16,7 @@
                             <group>
                                 <field name="about_author"/>
                                 <field name="author_dob"/>
+                                <field name = "author_gender"/>
                             </group>
                         </group>
                     </sheet>
@@ -32,6 +33,7 @@
                         <field name="author_name"/>
                         <field name="about_author"/>
                         <field name="author_dob"/>
+                    <field name = "author_gender"/>
                 </tree>
             </field>
         </record>
@@ -46,6 +48,7 @@
                         <field name="author_name"/>
                         <field name="about_author"/>
                         <field name="author_dob"/>
+                        <field name = "author_gender"/>
                     </sheet>
                 </form>
             </field>
@@ -62,17 +65,37 @@
                         <field name="author_name"/>
                         <field name="about_author"/>
                         <field name="author_dob"/>
+                        <field name = "author_gender"/>
                     </sheet>
                 </form>
             </field>
         </record>
+
+
+<!--        search view -->
+
+        <record id="view_library_author_search" model="ir.ui.view">
+        <field name="name">author.info</field>
+        <field name="model">author.info</field>
+        <field name="arch" type="xml">
+            <search>
+                        <field name="author_name"/>
+                        <field name="about_author"/>
+                        <field name="author_dob"/>
+                       <field name = "author_gender"/>
+                <separator/>
+              <filter string="Male" name="gender" domain="[('author_gender', '=','male')]"/>
+              <filter string="Female" name="gender" domain="[('author_gender', '=','female')]"/>
+            </search>
+        </field>
+       </record>
 
         <!--Action Window-->
          <record id="action_library_author" model="ir.actions.act_window">
             <field name="name">Author</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">author.info</field>
-             <field name="view_mode">form,tree,graph,pivot</field>
+             <field name="view_mode">tree,form,graph,pivot</field>
             <field name="context">{}</field>
             <field name="help" type="html">
                 <p class="0_view_nocontent_smiling_face">

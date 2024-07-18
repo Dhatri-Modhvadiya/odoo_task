@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--form view-->
+        <record id="view_product_form" model="ir.ui.view">
+            <field name="name">example.product</field>
+            <field name="model">example.product</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="price"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!--tree view-->
+        <record id="view_product_tree" model="ir.ui.view">
+            <field name="name">example.product.tree</field>
+            <field name="model">example.product</field>
+            <field name="arch" type="xml">
+                <tree>
+                 <field name="name"/>
+                    <field name="price"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--Action Window-->
+        <record id="action_example_product_action" model="ir.actions.act_window">
+            <field name="name">example.product</field>
+            <field name="res_model">example.product</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_product_example"
+                  name="Product"
+                  parent="menu_office_root"
+                  action="action_example_product_action"
+                  sequence="1"/>
+
+    </data>
+</odoo>

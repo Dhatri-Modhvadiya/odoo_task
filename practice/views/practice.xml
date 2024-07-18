@@ -122,14 +122,12 @@
         <record id="action_odoo_practice" model="ir.actions.act_window">
             <field name="name">Practice</field>
             <field name="res_model">model.info</field>
-            <field name="view_mode">tree,form,search</field>
+            <field name="view_mode">tree,form</field>
             <field name="help" type="html">
                 <p class="0_view_nocontent_smiling_face">
                     Create your odoo module!
                 </p>
             </field>
-            <field name="context">{'search_default_gender':1}</field>
-            <!--             <field name = "domain">[('gender','=','male' )]</field>-->
         </record>
 
         <menuitem id="menu_practice_master"

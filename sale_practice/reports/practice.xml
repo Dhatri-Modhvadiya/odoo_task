@@ -15,9 +15,6 @@
                 </t>
             </t>
         </template>
-    </data>
-
-
 
 
     <record id="practice_report_id" model="ir.actions.report">
@@ -29,4 +26,6 @@
         <field name="binding_model_id" ref="model_practice_info1"/>
         <field name="binding_type">report</field>
     </record>
+
+     </data>
 </odoo>

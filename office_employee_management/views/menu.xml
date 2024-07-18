@@ -21,6 +21,14 @@
               parent="menu_office_root"
               sequence="3"/>
 
+    <menuitem id = "menu_user_data"
+              name = "Users"
+              parent="menu_office_root"
+              sequence="5"/>
+
+
+
+
 <!--    <menuitem id = "menu_salary_master"-->
 <!--              name = "Salary"-->
 <!--              parent="menu_office_root"-->

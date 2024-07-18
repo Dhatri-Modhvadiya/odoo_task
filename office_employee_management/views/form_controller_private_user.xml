@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--form view-->
+        <record id="view_private_user_view_form" model="ir.ui.view">
+            <field name="name">private.user.form</field>
+            <field name="model">private.user</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="email"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <!--tree view-->
+        <record id="view_private_user_view_tree" model="ir.ui.view">
+            <field name="name">private.user.tree</field>
+            <field name="model">private.user</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="email"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--Action Window-->
+        <record id="action_private_user_website" model="ir.actions.act_window">
+            <field name="name">User</field>
+            <field name="res_model">private.user</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="0_view_nocontent_smiling_face">
+                    Create your form data  !
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_private_user"
+                  name="Private"
+                  parent="menu_user_data"
+                  action="action_private_user_website"
+                  sequence="4"/>
+
+    </data>
+</odoo>

@@ -3,3 +3,4 @@ access.library_management.author_name,access_library_management_author_name,mode
 access.library_management.book,access_library_management_book,model_book_info,base.group_user,1,1,1,1
 access.library_management.browsing_history,access_library_management_browsing_history,model_history_info,base.group_user,1,1,1,1
 access.library_management.member,access_library_management_member,model_member_info,base.group_user,1,1,1,1
+access.library_management.location,access_library_management_location,model_res_location,base.group_user,1,1,1,1

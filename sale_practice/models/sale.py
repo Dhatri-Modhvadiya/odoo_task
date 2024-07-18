@@ -1,6 +1,7 @@
 from odoo import models, fields, _, api
 from odoo.exceptions import ValidationError
 
+
 # to inherit sale.order model and add one custom field in it
 class StockMoveNew(models.Model):
     _inherit = 'sale.order'
@@ -22,6 +23,8 @@ class StockMoveNew(models.Model):
         res = super(StockMoveNew, self)._get_order_lines_to_report()
         print(" res>>>>>>>>>>>>>>", res)
         return res
+
+
 # -----------------------------------------------------------------------------------------------------
 
 
@@ -29,30 +32,54 @@ class StockMoveNew(models.Model):
 class StockMove(models.Model):
     _inherit = 'stock.picking'
     custom_name = fields.Char(related='sale_id.custom_name', string="Custom Name")
-# -----------------------------------------------------------------------------------------------------
 
+
+# -----------------------------------------------------------------------------------------------------
 
 
 # to inherit sale.order.line model and add one custom field in it
 class StockOrderLineNew(models.Model):
     _inherit = 'sale.order.line'
     extra = fields.Integer(string="Extra Tax")
-# -----------------------------------------------------------------------------------------------------
 
+
+# -----------------------------------------------------------------------------------------------------
 
 
 # to inherit stock.move model and add one custom field in it
 class StockMovePickingNew(models.Model):
     _inherit = 'stock.move'
-    extra = fields.Integer(related='sale_line_id.extra',string="Extra Tax")
+    extra = fields.Integer(related='sale_line_id.extra', string="Extra Tax")
+
+
 # -----------------------------------------------------------------------------------------------------
-
-
 
 
 # to add two fields in res.partner model
 class ResPartner(models.Model):
     _inherit = 'res.partner'
 
-    commission_amount = fields.Integer(string = "Commission Amount")
-    percentage = fields.Float(string = "percentage")
+    commission_amount = fields.Integer(string="Commission Amount")
+    percentage = fields.Float(string="percentage")
+
+
+
+
+# inherit product.product and add one button start here
+class ProductProduct(models.Model):
+    _inherit = 'product.product'
+
+    def get_expensive_products(self):
+
+        context = {
+            'default_lst_price': self.lst_price,
+        }
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'List price',
+            'view_mode': 'form',
+            'res_model': 'product.lst_price.popup',
+            'target': 'new',
+            'context': context,
+         }
+# inherit product.product and add one button end here

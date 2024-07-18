@@ -50,3 +50,21 @@ class ResPartner(models.Model):
             'context': ctx,
         }
 
+
+class StockPicking(models.Model):
+    _inherit = "sale.order"
+
+    @api.model
+    def _get_view(self, view_id=None, view_type='form', **options):
+        arch, view = super(StockPicking, self)._get_view(view_id, view_type, **options)
+        print("arch printed",arch)
+        print(type(arch))
+        print("view created",view)
+        print(type(view))
+        current_user = self.env.user
+        user_group = current_user.has_group('office_employee_management.group_gov_record_access')
+        if view_type == 'form' and not(user_group):
+            for node in arch.xpath("//field"):
+                node.set('readonly', '1')
+
+        return arch, view

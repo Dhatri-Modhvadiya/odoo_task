@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_sale_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header" position="after">
+                <button name="action_view_order_lines" string="Order Lines"
+                        type="action" class="btn-primary"
+                        icon="fa-list-ul">
+                    <field name="order_lines_count" widget="statinfo"/>
+                    <field name="order_lines_total" widget="monetary"/>
+                </button>
+            </xpath>
+            <xpath expr="//form/sheet/notebook/page[@name='order_lines']/group[1]" position="before">
+                <button name="action_view_sales_stats" string="Sales Stats"
+                        type="object" class="btn-secondary">
+                    <field name="total_sales" widget="statinfo"/>
+                    <field name="average_order_amount" widget="monetary"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

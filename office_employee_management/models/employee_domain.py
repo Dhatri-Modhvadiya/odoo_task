@@ -102,6 +102,95 @@ class Employee_domain(models.Model):
         })
         print("WRITE var", create_var.id)
 
+    def check_record_set(self):
+        for record in self:
+            print("Record set operations")
+            partners = self.env['res.partner'].search([])
+            print("Mapped partners",partners.mapped('name'))
+            print(" Sorted partners", partners.sorted(lambda o: o.create_date))
+            print("Sorted partners", partners.sorted(lambda o: o.write_date))
+            # print("Filtered partners", partners.filtered(lambda o: o.customer))
+
+
+
+
+
+class SaleOrder(models.Model):
+    _inherit = 'sale.order'
+
+    total_quantity = fields.Integer(string='Total Quantity',compute='_compute_total_quantity', store=True)
+
+    @api.depends('order_line.product_uom_qty', 'order_line.product_id.type')
+    def _compute_total_quantity(self):
+        for order in self:
+            total_qty = sum(line.product_uom_qty for line in order.order_line if line.product_id.type == 'product')
+
+            # reference - rental_processing.py
+            # @api.depends('product_id')
+            # def _compute_is_product_storable(self):
+            #     """Product type ?= storable product."""
+            #     for line in self:
+            #         line.is_product_storable = line.product_id and line.product_id.type == "product"
+
+            order.update({
+                'total_quantity': total_qty,
+            })
+
+
+
+# @api.depends('order_line.product_uom_qty', 'order_line.product_id.type')
+#     def _compute_total_quantity(self):
+#         for order in self:
+#             total_qty = sum(line.product_uom_qty for line in order.order_line if line.product_id.type == 'product')
+#             order.update({
+#                 'x_total_quantity': total_qty,
+#             })
+
+@api.depends('order_line.product_uom_qty', 'order_line.product_id.type')
+def _compute_total_quantity(self):
+    for order in self:
+        total_qty = sum(
+            order.order_line.filtered(lambda line: line.product_id.type == 'product').mapped('product_uom_qty')
+        )
+        order.total_quantity = total_qty
+
+
+class SaleOrderLine(models.Model):
+    _inherit = 'sale.order.line'
+
+    @api.model
+    def create(self, vals):
+        order_line = super(SaleOrderLine, self).create(vals)
+        if order_line.order_id:
+            order_line.order_id._compute_total_quantity()
+        return order_line
+
+    def write(self, vals):
+        res = super(SaleOrderLine, self).write(vals)
+        if self.order_id:
+            self.order_id._compute_total_quantity()
+        return res
+
+    def unlink(self):
+        orders = self.mapped('order_id')
+        res = super(SaleOrderLine, self).unlink()
+        orders._compute_total_quantity()
+        return res
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

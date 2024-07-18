@@ -88,5 +88,21 @@
             </field>
         </record>
 
+
+
+           <!--add header button in product.product model start here-->
+        <record id="product_product_view_form_easy_inherit_stock_new_button" model="ir.ui.view">
+            <field name="name">product.product.view.form.inherit.stock</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header/button[@name='action_open_label_layout']" position="after">
+                    <button string="My Button" type="object"
+                        name="get_expensive_products" class="oe_highlight"/>
+                </xpath>
+            </field>
+        </record>]
+             <!--add header button in product.product model start here-->
+
     </data>
 </odoo>

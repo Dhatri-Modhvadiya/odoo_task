@@ -7,12 +7,13 @@ class PracticeInformation(models.Model):
 
     name = fields.Char(string='Order Reference', required=True)
     customer_id = fields.Many2one('custom_sales.customer', string='Customer')
-class Customer(models.Model):
-         _name = 'custom_sales.customer'
-         _description = 'Customer'
 
-         name = fields.Char(string='Name', required=True)
-         email = fields.Char(string='Email')
+class Customer(models.Model):
+    _name = 'custom_sales.customer'
+    _description = 'Customer'
+
+    name = fields.Char(string='Name', required=True)
+    email = fields.Char(string='Email')
     
 
 

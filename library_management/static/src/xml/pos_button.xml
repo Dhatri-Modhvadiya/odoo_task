@@ -8,7 +8,7 @@
         </button>
     </t>
 
-          <!--name after total in pos order side start here-->
+    <!--name after total in pos order side start here-->
     <t t-name="point_of_sale.dhatri" t-inherit="point_of_sale.OrderWidget" t-inherit-mode="extension">
         <xpath expr="//div[@t-if='props.tax']" position="after">
             <div>
@@ -17,10 +17,10 @@
             </div>
         </xpath>
     </t>
-             <!--name after total in pos order side end here-->
+    <!--name after total in pos order side end here-->
 
 
-<t t-name="point_of_sale.customNote" t-inherit="point_of_sale.OrderWidget"
+    <t t-name="point_of_sale.customNote" t-inherit="point_of_sale.OrderWidget"
        t-inherit-mode="extension">
          <xpath expr="//div[hasclass('order-container')]" position="after">
           <span class="bg-secondary custom_note"></span>
@@ -28,35 +28,68 @@
     </t>
 
 
-
-          <!--note button in product screen start here -->
-     <t t-name="point_of_sale.notesButton">
+    <!--note button in product screen start here -->
+    <t t-name="point_of_sale.notesButton">
         <button class="control-button btn btn-light rounded-0 fw-bolder" t-on-click="() => this.onClick()">
             <i class="fa fa-comment" role="img" aria-label="Custom Alert" title="Custom Alert"/>
             <span> </span>
             <span>Add Notes</span>
         </button>
     </t>
-         <!--note button in product screen end here -->
-
+    <!--note button in product screen end here -->
 
 
     <!--discount button in product screen start here -->
     <t t-name="point_of_sale.MyOrderlineDiscount">
-        <button class="control-button btn btn-light rounded-0 fw-bolder" t-on-click="() => this.onClickDiscountDefault()">
-            <i class="fa fa-sticky-note me-1" />
+        <button class="control-button btn btn-light rounded-0 fw-bolder"
+                t-on-click="() => this.onClickDiscountDefault()">
+            <i class="fa fa-sticky-note me-1"/>
             <span>My Discount</span>
         </button>
     </t>
-         <!--discount button in product screen end here -->
+    <!--discount button in product screen end here -->
 
-<!--    <xpath expr="//notebook/page[notes]" position="inside">-->
-<!--           <t t-if="My.Note.get('library_management_system.My.Note')">-->
-<!--                using <t t-esc="My.Note['library_management_system.My.Note']" />-->
-<!--            </t>-->
-<!--    </xpath>-->
+    <!--    task -3-->
+
+    <t t-name="point_of_sale.ActionpadWidget">
+<!--            <button class="button set-partner btn btn-light rounded-0 py-2 flex-shrink-1 fw-bolder">-->
+        <button>
+                <div>
+                    Sundry Customer
+                </div>
+            <!--                <div class="d-flex justify-content-center align-items-center ">-->
+            <!--                    <span class="d-flex justify-content-center align-items-center rounded-circle me-2 text-bg-dark" t-if="!ui.isSmall">-->
+            <!--                        <i class="fa fa-user" role="img" aria-label="Custom" title="Custom" />-->
+            <!--                    </span>-->
+            <!--                    <div t-else="fw-bolder">-->
+            <!--                        Sundry Customer-->
+            <!--                    </div>-->
+            <!--                </div>-->
+           </button>
+    </t>
+    <!--    task-3 end-->
+
+    <!--    <xpath expr="//notebook/page[notes]" position="inside">-->
+    <!--           <t t-if="My.Note.get('library_management_system.My.Note')">-->
+    <!--                using <t t-esc="My.Note['library_management_system.My.Note']" />-->
+    <!--            </t>-->
+    <!--    </xpath>-->
 
 
+    <t t-name="point_of_sale.sundryReport" t-inherit="point_of_sale.PartnerListScreen" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('top-right-buttons')]" position="inside">
+            <button type="button" class="btn btn-outline-success" t-on-click="click">Set Sundry Customer</button>
+        </xpath>
+    </t>
+
+
+    <!--LOCATION BUTTON IN PRODUCT SCREEN INSIDE POS START HERE-->
+    <t t-name="point_of_sale.locationBtn">
+        <button class="control-button btn btn-light rounded-0 fw-bolder" t-on-click="() => this.OnClick()">
+            <span t-esc="state.locationText"/>
+        </button>
+    </t>
+    <!--LOCATION BUTTON IN PRODUCT SCREEN INSIDE POS END HERE-->
 
 
 </templates>

@@ -11,10 +11,12 @@
                     <sheet>
 
                         <group>
-<!--                        <field name="name"/>-->
-                        <!-- Add a button with an ID for event handling -->
-                        <button type="button" id="my_button" class="btn btn-primary" name = "event_handling">Click Me</button>
-                    </group>
+                            <!--                        <field name="name"/>-->
+                            <!-- Add a button with an ID for event handling -->
+                            <button type="button" id="my_button" class="btn btn-primary" name="event_handling">Click
+                                Me
+                            </button>
+                        </group>
 
                         <group>
                             <group>
@@ -46,33 +48,36 @@
 
 
         <record id="email_customer_view_my" model="ir.ui.view">
-        <field name="name">res.partner_view_id</field>
-        <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_form"/>
-        <field name="arch" type="xml">
-            <xpath expr="//sheet" position="before">
-                 <group>
+            <field name="name">res.partner_view_id</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="before">
+                    <group>
                         <field name="customer_rank" invisible="1"/>
                     </group>
-                <header>
- <button name="action_send_email" type="object" string="Send Mail"
+                    <header>
+                        <button name="action_send_email" type="object" string="Send Mail"
                                 invisible="customer_rank == 0"/>
-                </header>
-            </xpath>
-        </field>
-    </record>
+                    </header>
+                </xpath>
+            </field>
+        </record>
 
 
-       <record id="view_hr_exre_tree_inherit" model="ir.ui.view">
-        <field name="name">hr.expense</field>
-        <field name="model">hr.expense</field>
-        <field name="inherit_id" ref="hr_expense.hr_expense_view_expenses_analysis_tree"/>
-        <field name="arch" type="xml">
-            <xpath expr="//tree" position="attributes">
-                <attribute name="js_class">model_hr</attribute>
-            </xpath>
-        </field>
-    </record>
+        <record id="view_hr_exre_tree_inherit" model="ir.ui.view">
+            <field name="name">hr.expense</field>
+            <field name="model">hr.expense</field>
+            <field name="inherit_id" ref="hr_expense.hr_expense_view_expenses_analysis_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="js_class">model_hr</attribute>
+                </xpath>
+            </field>
+        </record>
+
+
+
 
         <!--Action Window-->
         <record id="action_office_department" model="ir.actions.act_window">

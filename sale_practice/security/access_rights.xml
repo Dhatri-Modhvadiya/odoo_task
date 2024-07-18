@@ -1,0 +1,26 @@
+<odoo>
+
+    <record id="model_category_office" model="ir.module.category">
+        <field name="name">Office Category</field>
+        <field name="description">Office Groups</field>
+        <field name="sequence">1</field>
+    </record>
+
+    <record id="group_office_customer_record_access" model="res.groups">
+        <field name="name">customer access</field>
+        <field name="category_id" ref="office_employee_management.model_category_office"/>
+    </record>
+
+    <record id="group_office_employee_record_access" model="res.groups">
+        <field name="name">Employee access</field>
+        <field name="category_id" ref="office_employee_management.model_category_office"/>
+    </record>
+
+    <record id="group_gov_record_access" model="res.groups">
+        <field name="name">Government access</field>
+        <field name="category_id" ref="office_employee_management.model_category_office"/>
+    </record>
+
+
+
+</odoo>

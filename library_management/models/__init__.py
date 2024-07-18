@@ -3,3 +3,4 @@ from . import book
 from . import browsing_history
 from . import member
 from . import pos_model
+from . import location

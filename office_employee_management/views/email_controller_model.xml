@@ -1,0 +1,51 @@
+<odoo>
+    <data>
+        <!-- Form view -->
+        <record model="ir.ui.view" id="view_email_model_form">
+            <field name="name">email.model.form</field>
+            <field name="model">my.email.model</field>
+            <field name="arch" type="xml">
+                <form string="Email Form">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="email"/>
+                            <field name="subject"/>
+                            <field name="message"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree view (if needed) -->
+        <record model="ir.ui.view" id="view_email_model_tree">
+            <field name="name">email.model.tree</field>
+            <field name="model">my.email.model</field>
+            <field name="arch" type="xml">
+                <tree string="Emails">
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="subject"/>
+                </tree>
+            </field>
+        </record>
+
+         <record id="menu_email_model" model="ir.ui.menu">
+            <field name="name">Email Model</field>
+            <field name="action" ref="action_email_model"/>
+            <field name="sequence" type="integer">10</field>
+        </record>
+
+        <record id="action_email_model" model="ir.actions.act_window">
+            <field name="name">Email Model</field>
+            <field name="res_model">my.email.model</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Create new Email</p>
+            </field>
+        </record>
+
+    </data>
+</odoo>
+

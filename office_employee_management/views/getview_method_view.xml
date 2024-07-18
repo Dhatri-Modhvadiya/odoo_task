@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Editable Form View -->
+    <record id="customer_form_editable" model="ir.ui.view">
+        <field name="name">Customer Form Editable</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <!-- Define your editable form view here -->
+            <form>
+                <!-- Define fields and layout for editable form -->
+            </form>
+        </field>
+    </record>
+
+    <!-- Readonly Form View -->
+    <record id="customer_form_readonly" model="ir.ui.view">
+        <field name="name">Customer Form Readonly</field>
+        <field name="model">res.partner</field>
+        <field name="arch" type="xml">
+            <!-- Define your readonly form view here -->
+            <form>
+                <!-- Define fields and layout for readonly form -->
+                <field name="name" readonly="1"/>
+                <!-- Add other fields as readonly if needed -->
+            </form>
+        </field>
+    </record>
+</odoo>
